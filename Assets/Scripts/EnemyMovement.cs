@@ -14,10 +14,10 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(Waypoints.waypoints.Length);
+        
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-        if (Vector3.Distance(target.position, transform.position) < 0.1f)
+        if (Vector3.Distance(target.position, transform.position) < 0.15f)
         {
             FindNextWaypoint();
         }

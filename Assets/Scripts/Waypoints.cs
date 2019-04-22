@@ -14,4 +14,5 @@ public class Waypoints : MonoBehaviour
             waypoints[i] = transform.GetChild(i);
         }
     }
+  
 }
