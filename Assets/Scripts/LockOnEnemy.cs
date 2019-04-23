@@ -6,10 +6,16 @@ public class LockOnEnemy : MonoBehaviour
 {
 
     private Transform target;
-    public float turretRange = 30f;
+    public GameObject destroyAnimation;
+    public Transform firePoint;
     public Transform rotateTheGun;
-    public float rotationSpeed = 15f;
-    
+    private float rotationSpeed = 20f;
+    //Shooting
+    public float turretRange = 30f;
+    public float fireRate = 2f;
+    private float fireCountdown = 0f;
+    public GameObject bulletPrefab;
+
 
 
     // Start is called before the first frame update
@@ -27,6 +33,13 @@ public class LockOnEnemy : MonoBehaviour
             return;
 
         RotateGunAtEnemy();
+        if(fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
+
     }
 
      void OnDrawGizmosSelected()
@@ -65,5 +78,16 @@ public class LockOnEnemy : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(rotateTheGun.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
         rotateTheGun.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
+    void Shoot()
+    {
+        Instantiate(destroyAnimation, firePoint.position, firePoint.rotation);
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab,firePoint.position,firePoint.rotation);
+        HitAndDestroy bullet = bulletGO.GetComponent<HitAndDestroy>();
+        if(bullet != null)
+        {
+            bullet.SeekForEnemy(target);
+        }
     }
 }

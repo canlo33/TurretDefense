@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5129178521733837986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8219614109429105639}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8219614109429105639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5129178521733837986}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.05814814, y: 0.23665237, z: 6.4401474}
+  m_LocalScale: {x: 0.6666669, y: 0.6666667, z: 0.6666669}
+  m_Children: []
+  m_Father: {fileID: 8865008567916959979}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8865008566458079544
 GameObject:
   m_ObjectHideFlags: 0
@@ -48,9 +78,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3b46944d92ca240b55cd91e3a51372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRange: 30
+  destroyAnimation: {fileID: 3587831990069569329, guid: 83b3ea6519bd41e468e8d288a7c13917,
+    type: 3}
+  firePoint: {fileID: 8219614109429105639}
   rotateTheGun: {fileID: 8865008567916959979}
-  rotationSpeed: 10
+  turretRange: 30
+  fireRate: 0.5
+  bulletPrefab: {fileID: 902669795847206946, guid: 296abe8a18141a34db59d7cef0b6ff81,
+    type: 3}
 --- !u!1 &8865008566500186643
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +423,7 @@ Transform:
   m_Children:
   - {fileID: 8865008566502747764}
   - {fileID: 8865008567638705348}
+  - {fileID: 8219614109429105639}
   m_Father: {fileID: 8865008566458079551}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -180, y: 1.0002222e+10, z: 180}
