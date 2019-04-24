@@ -8,6 +8,7 @@ public class HitAndDestroy : MonoBehaviour
     public GameObject destroyAnimation;
     private Transform target;
     public float bulletSpeed = 100f;
+    public float bulletPower = 100f;
 
     public void SeekForEnemy(Transform _target)
     {
@@ -18,7 +19,7 @@ public class HitAndDestroy : MonoBehaviour
     {
         //Instantiate(destroyAnimation, target.position, target.rotation);
         Destroy(gameObject);
-        Destroy(target.gameObject);
+        target.GetComponent<EnemyHealthManager>().damageEnemy(bulletPower);
         return;
     }
 

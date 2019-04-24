@@ -39,10 +39,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8865008566458079551}
-  - component: {fileID: 7741306824017861525}
+  - component: {fileID: 1067202461}
   m_Layer: 0
   m_Name: TurretXLvL1
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &7741306824017861525
+--- !u!114 &1067202461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
   firePoint: {fileID: 8219614109429105639}
   rotateTheGun: {fileID: 8865008567916959979}
   turretRange: 30
-  fireRate: 0.5
+  fireRate: 1
   bulletPrefab: {fileID: 902669795847206946, guid: 296abe8a18141a34db59d7cef0b6ff81,
     type: 3}
 --- !u!1 &8865008566500186643
