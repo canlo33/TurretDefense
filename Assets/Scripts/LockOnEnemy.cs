@@ -9,12 +9,13 @@ public class LockOnEnemy : MonoBehaviour
     public GameObject destroyAnimation;
     public Transform firePoint;
     public Transform rotateTheGun;
-    private float rotationSpeed = 20f;
+    private float rotationSpeed = 10f;
     //Shooting
     public float turretRange = 30f;
     public float fireRate = 2f;
     private float fireCountdown = 0f;
     public GameObject bulletPrefab;
+    public Animator animator;
 
 
 
@@ -22,6 +23,7 @@ public class LockOnEnemy : MonoBehaviour
     void Start()
     {
         InvokeRepeating("FindEnemy", 0f, 0.5f);
+        animator = GetComponentInChildren<Animator>();
     }
 
    
@@ -33,11 +35,15 @@ public class LockOnEnemy : MonoBehaviour
             return;
 
         RotateGunAtEnemy();
-        if(fireCountdown <= 0f)
-        {
+
+        if (fireCountdown <= 0f)
+        {            
             Shoot();
             fireCountdown = 1f / fireRate;
         }
+        else
+         animator.SetBool("isShooting", false);
+
         fireCountdown -= Time.deltaTime;
 
     }
@@ -87,7 +93,10 @@ public class LockOnEnemy : MonoBehaviour
         HitAndDestroy bullet = bulletGO.GetComponent<HitAndDestroy>();
         if(bullet != null)
         {
+            animator.SetBool("isShooting", true);
             bullet.SeekForEnemy(target);
         }
     }
+
+
 }

@@ -5,10 +5,11 @@ using UnityEngine;
 public class SpawnWave : MonoBehaviour
 {
     public GameObject enemy;
+    public float spawnRate = 1f;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 1f, 1f);
+        InvokeRepeating("SpawnEnemy", 1f, spawnRate);
     }
 
     // Update is called once per frame
