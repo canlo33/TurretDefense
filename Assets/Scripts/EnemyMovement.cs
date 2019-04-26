@@ -15,10 +15,12 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         
+        
         Vector3 direction = target.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
         if (Vector3.Distance(target.position, transform.position) < 0.15f)
-        {
+        {            
             FindNextWaypoint();
         }
     }
@@ -34,5 +36,7 @@ public class EnemyMovement : MonoBehaviour
             target = Waypoints.waypoints[waypointIndex];
                
     }
+
+
 
 }
