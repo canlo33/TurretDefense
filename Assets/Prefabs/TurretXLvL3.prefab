@@ -735,5 +735,6 @@ MonoBehaviour:
   rotateTheGun: {fileID: 3226896605699116487}
   turretRange: 40
   fireRate: 1
-  bulletPrefab: {fileID: 902669795847206946, guid: 296abe8a18141a34db59d7cef0b6ff81,
+  bulletPrefab: {fileID: 6667434258534740331, guid: 1434cbf0937b47342965b9fba860dbbf,
     type: 3}
+  animator: {fileID: 0}
