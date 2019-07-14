@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8865008566458079551}
   - component: {fileID: 1067202461}
-  - component: {fileID: 6581164889592447170}
+  - component: {fileID: 8819003010569526409}
   - component: {fileID: 5600204843096253583}
   m_Layer: 0
   m_Name: TurretXLvL1
@@ -169,7 +169,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 902669795847206946, guid: 296abe8a18141a34db59d7cef0b6ff81,
     type: 3}
   animator: {fileID: 8193159778375915059}
---- !u!114 &6581164889592447170
+--- !u!114 &8819003010569526409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
