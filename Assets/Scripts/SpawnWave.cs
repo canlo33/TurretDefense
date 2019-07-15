@@ -21,6 +21,6 @@ public class SpawnWave : MonoBehaviour
     void SpawnEnemy()
 
     {
-       // Instantiate(enemy, transform.position, transform.rotation);
+        Instantiate(enemy, transform.position, transform.rotation);
     }
 }

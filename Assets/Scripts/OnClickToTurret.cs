@@ -33,16 +33,16 @@ public class OnClickToTurret : MonoBehaviour
         }
 
 
+    }
 
-        void ShowRangeIndicator(bool status)
-        {
-            transform.Find("TowerRangeIndicator").gameObject.SetActive(status);
-
-        }
+    void ShowRangeIndicator(bool status)
+    {
+        transform.Find("TowerRangeIndicator").gameObject.SetActive(status);
 
     }
+    
 }
 
 
- 
+
 
