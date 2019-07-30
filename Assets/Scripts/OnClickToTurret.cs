@@ -5,9 +5,14 @@ using UnityEngine.EventSystems;
 
 public class OnClickToTurret : MonoBehaviour
 {
+    int uniqueId;
 
-    // Update is called once per frame
-    void Update()
+     void Start()
+    {
+        uniqueId = gameObject.GetInstanceID();
+    }
+
+   private void Update()
     {
 
         if (Input.GetMouseButtonDown(0))
@@ -18,13 +23,15 @@ public class OnClickToTurret : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.tag == "Turret" && hit.collider.gameObject.name == this.name)
+                if (hit.collider.gameObject.tag == "Turret" && hit.collider.gameObject.GetInstanceID() == uniqueId)
                 {
+                    // If turret is clicked, do followings
                     ShowRangeIndicator(true);
 
                 }
                 else
                 {
+                    // If somewhere else but turret is clicked, do followings
                     ShowRangeIndicator(false);
                 }
 
@@ -35,10 +42,10 @@ public class OnClickToTurret : MonoBehaviour
 
     }
 
+
     void ShowRangeIndicator(bool status)
     {
         transform.Find("TowerRangeIndicator").gameObject.SetActive(status);
-
     }
     
 }

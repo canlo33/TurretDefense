@@ -11,7 +11,7 @@ public class LockOnEnemy : MonoBehaviour
     public Transform rotateTheGun;
     private float rotationSpeed = 10f;
     //Shooting
-    public float turretRange = 30f;
+    public float turretRange;
     public float fireRate = 2f;
     private float fireCountdown = 0f;
     public GameObject bulletPrefab;

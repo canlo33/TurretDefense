@@ -348,6 +348,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6979476074214544142}
   - component: {fileID: 2007130782572625324}
+  - component: {fileID: 4559147799363194338}
+  - component: {fileID: 7040219513292881238}
   m_Layer: 0
   m_Name: TurretXLvL2
   m_TagString: Turret
@@ -395,6 +397,36 @@ MonoBehaviour:
   bulletPrefab: {fileID: 902669795847206946, guid: 296abe8a18141a34db59d7cef0b6ff81,
     type: 3}
   animator: {fileID: 0}
+--- !u!114 &4559147799363194338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979476074214544137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ffca39669c49948b38d6a19f188a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuOptions:
+  - title: SellX2
+    color: {r: 1, g: 0.033018887, b: 0.1254902, a: 1}
+    sprite: {fileID: 21300000, guid: 012f5e568de028948b588361a8b5c402, type: 3}
+    buttonTitles: +75 G
+--- !u!135 &7040219513292881238
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979476074214544137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6.014092
+  m_Center: {x: -0.040005364, y: 4.753151, z: -2.6064691e-16}
 --- !u!1 &6979476074853324415
 GameObject:
   m_ObjectHideFlags: 0
